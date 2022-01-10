@@ -1,2 +1,2 @@
 URL01 :- https://github.com/MunishBansal29/udacity-auto-deploy-final
-URL02 :- http://udapeople-196b6d2.s3-website-us-east-1.amazonaws.com/#/employees
+URL02 :- https://udapeople-0a00ac2.s3.amazonaws.com/index.html#/employees
