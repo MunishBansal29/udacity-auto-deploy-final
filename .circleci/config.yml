@@ -268,7 +268,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["62:57:a7:2c:46:c1:08:b4:5c:2d:91:33:3b:c3:b8:08"] # You can get this ID in the section where you registered the SSH Key      
+          fingerprints: ["a7:fa:80:fa:b0:33:f7:46:85:19:9e:6a:ca:4d:9c:55"] # You can get this ID in the section where you registered the SSH Key      
       - attach_workspace:
           at: ~/
 
@@ -341,14 +341,21 @@ jobs:
       - run:
           name: Backend smoke test.
           command: |
-            # your code here            
+            export API_URL="http://${BACKEND_IP}:3030"
+            echo "${API_URL}"
+            if curl "${API_URL}/api/status" | grep "ok"
+            then
+                return 0
+            else
+                return 1
+            fi          
       - run:
           name: Frontend smoke test.
           command: |
             URL="http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-us-east-1.amazonaws.com"
             if curl -s ${URL} | grep "Welcome"
             then
-            return 1
+            return 0
             else
             return 1
             fi
