@@ -393,7 +393,7 @@ jobs:
     docker:
       - image: amazon/aws-cli
     steps:
-      # Checkout code from git
+      # Checkout code from git repo
       - checkout
       - run:
           name: Get old stack workflow id then remove the stack and files
