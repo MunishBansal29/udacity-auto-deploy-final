@@ -31,7 +31,7 @@ commands:
 jobs:
   build-frontend:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
@@ -49,7 +49,7 @@ jobs:
 
   build-backend:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
@@ -125,7 +125,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: bitnami/aws-cli:latest
+      - image: amazon/aws-cli:latest
     steps:
       - checkout
       - run:
