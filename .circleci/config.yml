@@ -128,9 +128,6 @@ jobs:
       - image: amazon/aws-cli:2.1.11
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - "K4SrZU17gTirriWnDTBC4ZuyYC816vxryDX6kYJSWHg"
       - run:
           name: installing required software
           command: |
