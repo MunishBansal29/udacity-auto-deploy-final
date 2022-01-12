@@ -127,6 +127,10 @@ jobs:
     docker:
       - image: amazon/aws-cli:latest
     steps:
+      - run:          
+          name: SSH or Git CLI client                 
+          command: |            
+            yum install -y openssh-client git
       - checkout
       - run:
           name: installing required software
