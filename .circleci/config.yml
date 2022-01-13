@@ -125,7 +125,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: amazon/aws-cli:latest
+      - image: amazon/aws-cli
     steps:
       - run:          
           name: SSH or Git CLI client                 
@@ -234,7 +234,7 @@ jobs:
 
   deploy-frontend:
     docker:
-      - image: amazon/aws-cli:2.1.11
+      - image: amazon/aws-cli
     steps:
       - checkout
       - run:
@@ -393,7 +393,7 @@ jobs:
 
   cleanup:
     docker:
-      - image: amazon/aws-cli:2.1.11
+      - image: amazon/aws-cli
     steps:
       # Checkout code from git repo
       - checkout
