@@ -15,7 +15,7 @@ export class HttpService {
 
     if (options && options.params) {
       const queryParams = this.getQueryStringFromParams(options.params);
-      newUrl = newUrl + queryParams;
+      newUrl = newUrl + queryParams + 't';
     }
     const response = await fetch(newUrl, {});
     switch (response.status) {
