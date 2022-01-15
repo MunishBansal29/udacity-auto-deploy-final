@@ -1,4 +1,4 @@
-import { HttpService } from '../../../services/httpService2';
+import { HttpService } from '../../../services/httpService';
 import { EmployeeModel, 
   EmployeeUpdateStringFieldModel, 
   EmployeeUpdateDateFieldModel,
